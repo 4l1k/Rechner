@@ -38,7 +38,7 @@ class EditReasonVC: UIViewController {
 
 extension EditReasonVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (getReasonData(key) ?? ["" : ""]).count
+        return getReasonData(key) == nil ? 0 : getReasonData(key)!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
