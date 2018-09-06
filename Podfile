@@ -10,6 +10,7 @@ target 'Rechner' do
   pod 'Locksmith'
   pod 'DropDown'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'NotificationBannerSwift'
   
   target 'RechnerTests' do
     inherit! :search_paths

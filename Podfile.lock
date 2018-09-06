@@ -4,16 +4,25 @@ PODS:
     - ChameleonFramework/Default
   - DropDown (2.3.2)
   - Locksmith (4.0.0)
+  - MarqueeLabel/Swift (3.1.6)
+  - NotificationBannerSwift (1.6.3):
+    - MarqueeLabel/Swift
+    - SnapKit (~> 4.0)
+  - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - DropDown
   - Locksmith
+  - NotificationBannerSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - DropDown
     - Locksmith
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - SnapKit
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -28,7 +37,10 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
+  MarqueeLabel: 0c41f08ef5773e29c0f71064a8fa788a2fd8b365
+  NotificationBannerSwift: b231e4c3244848ef300e1c53ce027b9756b9b06f
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 5caab0c5266a8436e5a86306b6bd88a73fb010be
+PODFILE CHECKSUM: 8405e483948cb16ada0df8e9dc32c41ada07828f
 
 COCOAPODS: 1.5.3

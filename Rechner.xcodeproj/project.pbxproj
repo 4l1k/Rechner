@@ -18,6 +18,11 @@
 		42C6404A214013C90024FBCF /* SpesificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C64049214013C90024FBCF /* SpesificationsVC.swift */; };
 		42C6404C214014030024FBCF /* GraphicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6404B214014030024FBCF /* GraphicsVC.swift */; };
 		42C6404E2140145D0024FBCF /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6404D2140145D0024FBCF /* SettingsVC.swift */; };
+		42C6405021411F0C0024FBCF /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6404F21411F0C0024FBCF /* SettingTableViewCell.swift */; };
+		42C64052214120FB0024FBCF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C64051214120FB0024FBCF /* Constants.swift */; };
+		42C64055214127E50024FBCF /* AddReasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C64054214127E50024FBCF /* AddReasonVC.swift */; };
+		42C64057214161E20024FBCF /* EditReasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C64056214161E20024FBCF /* EditReasonVC.swift */; };
+		42C6405921416B850024FBCF /* EditReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6405821416B850024FBCF /* EditReasonTableViewCell.swift */; };
 		5899BBEF359422D15E93E794 /* Pods_RechnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A276DEC2860A3C16AF59D7B /* Pods_RechnerTests.framework */; };
 		B9E722AAFC2B266702D76EF7 /* Pods_Rechner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB8919B1AA7CCF7C6A3AA83 /* Pods_Rechner.framework */; };
 		C50CE984AC5D38C6BAC8A1C3 /* Pods_RechnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0549DEE00FB1153BCEB7D8 /* Pods_RechnerUITests.framework */; };
@@ -60,6 +65,11 @@
 		42C64049214013C90024FBCF /* SpesificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpesificationsVC.swift; sourceTree = "<group>"; };
 		42C6404B214014030024FBCF /* GraphicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsVC.swift; sourceTree = "<group>"; };
 		42C6404D2140145D0024FBCF /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		42C6404F21411F0C0024FBCF /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		42C64051214120FB0024FBCF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		42C64054214127E50024FBCF /* AddReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReasonVC.swift; sourceTree = "<group>"; };
+		42C64056214161E20024FBCF /* EditReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReasonVC.swift; sourceTree = "<group>"; };
+		42C6405821416B850024FBCF /* EditReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReasonTableViewCell.swift; sourceTree = "<group>"; };
 		53505CF08974078D536EFD84 /* Pods-RechnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RechnerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RechnerTests/Pods-RechnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F6B623B12EEFFF690F2DD3D /* Pods-Rechner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rechner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rechner/Pods-Rechner.release.xcconfig"; sourceTree = "<group>"; };
 		6C0A9248B2B209980BADE23F /* Pods-Rechner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rechner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rechner/Pods-Rechner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,11 +147,12 @@
 				42C640472140139A0024FBCF /* SpendingVC.swift */,
 				42C64049214013C90024FBCF /* SpesificationsVC.swift */,
 				42C6404B214014030024FBCF /* GraphicsVC.swift */,
-				42C6404D2140145D0024FBCF /* SettingsVC.swift */,
+				42C64053214127AC0024FBCF /* Settings Page */,
 				4217EFCF214009A10032FC8E /* Main.storyboard */,
 				4217EFD2214009A30032FC8E /* Assets.xcassets */,
 				4217EFD4214009A30032FC8E /* LaunchScreen.storyboard */,
 				4217EFD7214009A30032FC8E /* Info.plist */,
+				42C64051214120FB0024FBCF /* Constants.swift */,
 			);
 			path = Rechner;
 			sourceTree = "<group>";
@@ -162,6 +173,18 @@
 				4217EFED214009A30032FC8E /* Info.plist */,
 			);
 			path = RechnerUITests;
+			sourceTree = "<group>";
+		};
+		42C64053214127AC0024FBCF /* Settings Page */ = {
+			isa = PBXGroup;
+			children = (
+				42C6404D2140145D0024FBCF /* SettingsVC.swift */,
+				42C6404F21411F0C0024FBCF /* SettingTableViewCell.swift */,
+				42C64054214127E50024FBCF /* AddReasonVC.swift */,
+				42C64056214161E20024FBCF /* EditReasonVC.swift */,
+				42C6405821416B850024FBCF /* EditReasonTableViewCell.swift */,
+			);
+			path = "Settings Page";
 			sourceTree = "<group>";
 		};
 		D04F4BE6BFAAF6C2C739D34F /* Pods */ = {
@@ -354,12 +377,18 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -391,12 +420,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C64057214161E20024FBCF /* EditReasonVC.swift in Sources */,
 				42C640482140139A0024FBCF /* SpendingVC.swift in Sources */,
+				42C6405921416B850024FBCF /* EditReasonTableViewCell.swift in Sources */,
 				4217EFCC214009A10032FC8E /* AppDelegate.swift in Sources */,
+				42C6405021411F0C0024FBCF /* SettingTableViewCell.swift in Sources */,
 				42C6404A214013C90024FBCF /* SpesificationsVC.swift in Sources */,
 				42C6404C214014030024FBCF /* GraphicsVC.swift in Sources */,
+				42C64055214127E50024FBCF /* AddReasonVC.swift in Sources */,
 				42C6404621400D160024FBCF /* AddVC.swift in Sources */,
 				42C6404E2140145D0024FBCF /* SettingsVC.swift in Sources */,
+				42C64052214120FB0024FBCF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
