@@ -25,6 +25,8 @@ class AddVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      //  try? Locksmith.deleteDataForUserAccount(userAccount: Constants.Properties.moneyTransactionReasonKeyForIncome)
+      //  try? Locksmith.deleteDataForUserAccount(userAccount: Constants.Properties.moneyTransactionReasonKeyForOutflow)
     }
     
     override func viewDidLayoutSubviews() {
