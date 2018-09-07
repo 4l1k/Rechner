@@ -49,23 +49,22 @@ class EditReasonVC: UIViewController {
     }
     
     func toggleDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-        
       
-        let action = UIContextualAction(style: .normal,
-                                        title: "Delete") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
-                                           
-                                            var data = self.getReasonData(self.key)!
-                                            data.removeValue(forKey: String(indexPath.row))
-                                            
-                                            data = self.changeDicKey(data)
-                                            try? Locksmith.updateData(data: data, forUserAccount: self.key)
-                                                
-                                            self.editReasonTableView.reloadData()
-                                         
-                                                completionHandler(true)
-                                           
+        let action = UIContextualAction(
+            style: .normal,
+            title: "Delete") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
+                
+                var data = self.getReasonData(self.key)!
+                data.removeValue(forKey: String(indexPath.row))
+                
+                data = self.changeDicKey(data)
+                try? Locksmith.updateData(data: data, forUserAccount: self.key)
+                
+                self.editReasonTableView.reloadData()
+                
+                completionHandler(true)
         }
-      
+        
         action.image = UIImage(named: "garbage")
         action.backgroundColor = .white
         return action
@@ -73,16 +72,15 @@ class EditReasonVC: UIViewController {
     
     func toggleEditAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         
-        
-        let action = UIContextualAction(style: .normal,
-                                        title: "Edit") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
-                                            
-                                            
-                                            
-                                            self.editReasonTableView.reloadRows(at: [indexPath], with: .none)
-                                            
-                                            completionHandler(true)
-                                            
+        let action = UIContextualAction(
+            style: .normal,
+            title: "Edit") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
+                let vc = Constants.storyboard.instantiateViewController(withIdentifier: Constants.VCIdentifiers.SRVC) as! SaveReasonVC
+                vc.reasonData = (self.editReasonTableView.cellForRow(at: indexPath) as! EditReasonTableViewCell).cellItem
+                vc.reasonKey = self.key
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+                completionHandler(true)
         }
         
         action.image = UIImage(named: "edit")
@@ -123,7 +121,6 @@ extension EditReasonVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
         let deleteAction = self.toggleDeleteAction(forRowAtIndexPath: indexPath)
         let editAction = self.toggleEditAction(forRowAtIndexPath: indexPath)
         let swipeConfig = UISwipeActionsConfiguration(actions: [editAction, deleteAction])

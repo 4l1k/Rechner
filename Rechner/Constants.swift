@@ -62,6 +62,7 @@ class Constants {
     struct VCIdentifiers {
         static let ATRVC = "ATRVC"
         static let ETRVC = "ETRVC"
+        static let SRVC = "SRVC"
     }
 }
 
