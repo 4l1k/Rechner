@@ -13,8 +13,10 @@ class Constants {
     static let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     struct Colors {
-        static let magentaColor = UIColor(hexString: "8E44AD")! // MAIN MAGENTA COLOR
-        static let lightGray = UIColor(hexString: "F5F5F5")! // MAIN BACKGROUND COLOR
+        static let magenta = UIColor(hexString: "8E44AD")! // MAIN MAGENTA COLOR
+        static let lightGray = UIColor(hexString: "F5F5F5")! // MAIN GRAY COLOR
+        static let green = UIColor(hexString: "29B01E")! // MAIN GREEN
+        static let red = UIColor(hexString: "D91E18")! // MAIN RED
     }
     
     struct Properties {
@@ -51,8 +53,10 @@ class Constants {
     }
     
     struct Arrays {
-        static let moneyTransactionReasonArray = [Setting(imageName: "addReason", title: "Add transaction reason"),
-                                                  Setting(imageName: "editReason", title: "Edit transaction reasons")]//["Add transaction reason", "Edit transaction reasons"]
+        static let moneyTransactionReasonArray =
+            [Setting(imageName: "addReason", title: "Add transaction reason"),
+             Setting(imageName: "editReason", title: "Edit transaction reasons"),
+             Setting(imageName: "garbage", title: "Delete reason settings")]
     }
     
     struct Style {
@@ -63,6 +67,11 @@ class Constants {
         static let ATRVC = "ATRVC"
         static let ETRVC = "ETRVC"
         static let SRVC = "SRVC"
+    }
+    
+    struct NotificationKeys {
+        static let reloadReasons = "RELOAD_REASONS"
+        static let reloadTransactions = "RELOAD_TRANSACTIONS"
     }
 }
 

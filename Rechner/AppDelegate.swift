@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         DropDown.startListeningToKeyboard()
         
-        UIImageView.appearance(whenContainedInInstancesOf: [UITableView.self]).tintColor = Constants.Colors.magentaColor
+        UIImageView.appearance(whenContainedInInstancesOf: [UITableView.self]).tintColor = Constants.Colors.magenta
         return true
     }
 

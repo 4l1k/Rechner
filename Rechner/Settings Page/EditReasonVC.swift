@@ -9,7 +9,7 @@
 import UIKit
 import Locksmith
 
-class EditReasonVC: UIViewController {
+class EditReasonVC: GeneralViewController {
     @IBOutlet weak var editReasonTableView: UITableView!
     var key = Constants.Properties.moneyTransactionReasonKeyForIncome
     
@@ -17,6 +17,10 @@ class EditReasonVC: UIViewController {
         super.viewDidLoad()
         editReasonTableView.separatorInset = UIEdgeInsets(top: 0, left: view.bounds.width, bottom: 0, right: 0)
         
+    }
+    
+    override func reloadReasonData() {
+        editReasonTableView.reloadData()
     }
     
     func changeDicKey(_ dic: [String : Any]) -> [String : Any] {
@@ -31,11 +35,6 @@ class EditReasonVC: UIViewController {
     }
     
     
-    private func getReasonData(_ key: String) -> [String : Any]? {
-        
-        let data = Locksmith.loadDataForUserAccount(userAccount: key)
-        return data
-    }
     @IBAction func inOutSegmentValueChanged(_ sender: Any) {
         switch (sender as! UISegmentedControl).selectedSegmentIndex {
         case 0:
@@ -78,6 +77,7 @@ class EditReasonVC: UIViewController {
                 let vc = Constants.storyboard.instantiateViewController(withIdentifier: Constants.VCIdentifiers.SRVC) as! SaveReasonVC
                 vc.reasonData = (self.editReasonTableView.cellForRow(at: indexPath) as! EditReasonTableViewCell).cellItem
                 vc.reasonKey = self.key
+                vc.selectedKey = indexPath.row
                 self.navigationController?.pushViewController(vc, animated: true)
                 
                 completionHandler(true)
@@ -107,17 +107,19 @@ extension EditReasonVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var vc: UIViewController?
-        switch indexPath.row {
-        case 0:
-            vc = Constants.storyboard.instantiateViewController(withIdentifier: Constants.VCIdentifiers.ATRVC)
-        case 1:
-            vc = Constants.storyboard.instantiateViewController(withIdentifier: Constants.VCIdentifiers.ETRVC)
-        default:
-            break
-        }
-        
-        navigationController?.pushViewController(vc!, animated: true)
+        /*
+         var vc: UIViewController?
+         switch indexPath.row {
+         case 0:
+         vc = Constants.storyboard.instantiateViewController(withIdentifier: Constants.VCIdentifiers.ATRVC)
+         case 1:
+         vc = Constants.storyboard.instantiateViewController(withIdentifier: Constants.VCIdentifiers.ETRVC)
+         default:
+         break
+         }
+         
+         navigationController?.pushViewController(vc!, animated: true)
+         */
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

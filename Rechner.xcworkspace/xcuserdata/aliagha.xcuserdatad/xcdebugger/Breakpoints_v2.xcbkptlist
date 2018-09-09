@@ -6,16 +6,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Rechner/Settings Page/EditReasonVC.swift"
-            timestampString = "557964613.7320451"
+            filePath = "Rechner/Spending Page/SummaryTableViewCell.swift"
+            timestampString = "558144369.9699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "toggleDeleteAction(forRowAtIndexPath:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "setup(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rechner/GeneralViewController.swift"
+            timestampString = "558147118.056003"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "updateReason(reasonText:isOut:reasonKey:selectedKey:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,30 +41,30 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Rechner/Settings Page/EditReasonVC.swift"
-            timestampString = "557964613.732455"
+            filePath = "Rechner/GeneralViewController.swift"
+            timestampString = "558147118.056376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "updateReason(reasonText:isOut:reasonKey:selectedKey:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Rechner/Settings Page/EditReasonTableViewCell.swift"
-            timestampString = "557962407.46246"
+            filePath = "Rechner/GeneralViewController.swift"
+            timestampString = "558147118.056613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "cellItem"
-            landmarkType = "24">
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "updateReason(reasonText:isOut:reasonKey:selectedKey:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F6A7E9321446AE500F28355 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A7E9221446AE500F28355 /* GeneralViewController.swift */; };
+		2FCC0E87214478460082FC45 /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC0E86214478460082FC45 /* SpendingTableViewCell.swift */; };
+		2FCC0E8921448A3A0082FC45 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC0E8821448A3A0082FC45 /* SummaryTableViewCell.swift */; };
 		4217EFCC214009A10032FC8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4217EFCB214009A10032FC8E /* AppDelegate.swift */; };
 		4217EFD1214009A10032FC8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4217EFCF214009A10032FC8E /* Main.storyboard */; };
 		4217EFD3214009A30032FC8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4217EFD2214009A30032FC8E /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		0A276DEC2860A3C16AF59D7B /* Pods_RechnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RechnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6A7E9221446AE500F28355 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		2FCC0E86214478460082FC45 /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
+		2FCC0E8821448A3A0082FC45 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		338E9A5598784952DEC12B81 /* Pods-RechnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RechnerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RechnerUITests/Pods-RechnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4217EFC8214009A10032FC8E /* Rechner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rechner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4217EFCB214009A10032FC8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +125,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2F6A7E942144703900F28355 /* Spending Page */ = {
+			isa = PBXGroup;
+			children = (
+				42C640472140139A0024FBCF /* SpendingVC.swift */,
+				2FCC0E86214478460082FC45 /* SpendingTableViewCell.swift */,
+				2FCC0E8821448A3A0082FC45 /* SummaryTableViewCell.swift */,
+			);
+			path = "Spending Page";
+			sourceTree = "<group>";
+		};
 		4217EFBF214009A10032FC8E = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +162,7 @@
 			children = (
 				4217EFCB214009A10032FC8E /* AppDelegate.swift */,
 				42C6404521400D160024FBCF /* AddVC.swift */,
-				42C640472140139A0024FBCF /* SpendingVC.swift */,
+				2F6A7E942144703900F28355 /* Spending Page */,
 				42C64049214013C90024FBCF /* SpesificationsVC.swift */,
 				42C6404B214014030024FBCF /* GraphicsVC.swift */,
 				42C64053214127AC0024FBCF /* Settings Page */,
@@ -155,6 +171,7 @@
 				4217EFD4214009A30032FC8E /* LaunchScreen.storyboard */,
 				4217EFD7214009A30032FC8E /* Info.plist */,
 				42C64051214120FB0024FBCF /* Constants.swift */,
+				2F6A7E9221446AE500F28355 /* GeneralViewController.swift */,
 			);
 			path = Rechner;
 			sourceTree = "<group>";
@@ -378,6 +395,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Rechner/Pods-Rechner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
@@ -387,6 +405,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
@@ -429,12 +448,15 @@
 				4217EFCC214009A10032FC8E /* AppDelegate.swift in Sources */,
 				42C6405021411F0C0024FBCF /* SettingTableViewCell.swift in Sources */,
 				42C6405B21425E5B0024FBCF /* SaveReasonVC.swift in Sources */,
+				2F6A7E9321446AE500F28355 /* GeneralViewController.swift in Sources */,
 				42C6404A214013C90024FBCF /* SpesificationsVC.swift in Sources */,
 				42C6404C214014030024FBCF /* GraphicsVC.swift in Sources */,
 				42C64055214127E50024FBCF /* AddReasonVC.swift in Sources */,
 				42C6404621400D160024FBCF /* AddVC.swift in Sources */,
 				42C6404E2140145D0024FBCF /* SettingsVC.swift in Sources */,
 				42C64052214120FB0024FBCF /* Constants.swift in Sources */,
+				2FCC0E8921448A3A0082FC45 /* SummaryTableViewCell.swift in Sources */,
+				2FCC0E87214478460082FC45 /* SpendingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

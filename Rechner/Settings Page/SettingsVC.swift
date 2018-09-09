@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Locksmith
+import NotificationBannerSwift
 
-class SettingsVC: UIViewController {
+class SettingsVC: GeneralViewController {
     @IBOutlet weak var settingTableView: UITableView!
     
     override func viewDidLoad() {
@@ -40,6 +42,8 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
             vc = Constants.storyboard.instantiateViewController(withIdentifier: Constants.VCIdentifiers.ATRVC)
         case 1:
             vc = Constants.storyboard.instantiateViewController(withIdentifier: Constants.VCIdentifiers.ETRVC)
+        case 2:
+            deleteReasons()
         default:
             break
         }

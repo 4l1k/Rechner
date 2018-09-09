@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Locksmith
 
-
-class SaveReasonVC: UIViewController {
+class SaveReasonVC: GeneralViewController {
     
     var reasonKey : String?
     var reasonData : [String : Any]?
+    var selectedKey : Int?
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var reasonTextField: UITextField!
@@ -38,5 +39,9 @@ class SaveReasonVC: UIViewController {
     }
     
     @IBAction func saveButtonClick(_ sender: Any) {
+        if validateText(reasonTextField) {
+            let isOut = Bool(truncating: inOutSegment.selectedSegmentIndex as NSNumber)
+            updateReason(reasonText: reasonTextField.text ?? "", isOut: isOut, reasonKey: reasonKey!, selectedKey: selectedKey!)
+        }
     }
 }

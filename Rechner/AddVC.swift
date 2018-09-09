@@ -12,7 +12,7 @@ import ChameleonFramework
 import Locksmith
 import NotificationBannerSwift
 
-class AddVC: UIViewController {
+class AddVC: GeneralViewController {
     
     @IBOutlet weak var moneyTextField: UITextField!
     @IBOutlet weak var currencySegment: UISegmentedControl!
@@ -25,8 +25,14 @@ class AddVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  try? Locksmith.deleteDataForUserAccount(userAccount: Constants.Properties.moneyTransactionReasonKeyForIncome)
+      //  try? Locksmith.deleteDataForUserAccount(userAccount: Constants.Properties.moneyTransactionKey)
       //  try? Locksmith.deleteDataForUserAccount(userAccount: Constants.Properties.moneyTransactionReasonKeyForOutflow)
+    }
+    
+    override func reloadReasonData() {
+        let isOut = Bool(truncating: inOutSegment.selectedSegmentIndex as NSNumber)
+        let key = isOut ? Constants.Properties.moneyTransactionReasonKeyForOutflow : Constants.Properties.moneyTransactionReasonKeyForIncome
+        setDropdownSource(key)
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,7 +52,7 @@ class AddVC: UIViewController {
     private func dropdownSetup() {
         reasonDropdown.anchorView = reasonButton
         reasonDropdown.bottomOffset = CGPoint(x: 0, y: reasonButton.bounds.height - 5)
-        reasonDropdown.textColor = Constants.Colors.magentaColor
+        reasonDropdown.textColor = Constants.Colors.magenta
         reasonDropdown.backgroundColor = Constants.Colors.lightGray
         reasonDropdown.shadowColor = .clear
         reasonDropdown.cornerRadius = Constants.Style.cornerRadius
@@ -63,12 +69,6 @@ class AddVC: UIViewController {
         reasonDropdown.direction = .bottom
     }
     
-    private func getReasonData(_ key: String) -> [String : Any]? {
-        
-        let data = Locksmith.loadDataForUserAccount(userAccount: key)
-        return data
-    }
-    
     @IBAction func reasonButtonClick(_ sender: Any) {
         reasonDropdown.show()
     }
@@ -76,26 +76,14 @@ class AddVC: UIViewController {
     @IBAction func addButtonClick(_ sender: Any) {
         if validate() {
             
-            let save = [Constants.Dictionaries.TransactionKeys.count : moneyTextField.text ?? "",
-                        Constants.Dictionaries.TransactionKeys.currency : currencySegment.selectedSegmentIndex == 0 ? "€" : "₼",
-                        Constants.Dictionaries.TransactionKeys.inOut : inOutSegment.selectedSegmentIndex == 0 ? "In" : "Out",
-                        Constants.Dictionaries.TransactionKeys.reason : addButton.titleLabel?.text ?? "",
-                        Constants.Dictionaries.TransactionKeys.spendType : spendTypeSegment.selectedSegmentIndex == 0 ? "With card" : "Cash",
-                        Constants.Dictionaries.TransactionKeys.date : Date()] as [String : Any]
-            
-            if var data = getTransactionData() {
-                data.updateValue(save, forKey: String(data.count))
-                try? Locksmith.updateData(data: data, forUserAccount: Constants.Properties.moneyTransactionKey)
-            } else {
-                let data2 = [String(0) : save]
-                try? Locksmith.saveData(data: data2, forUserAccount: Constants.Properties.moneyTransactionKey)
-            }
-            let banner = NotificationBanner(title: Constants.Notifs.Success.title, subtitle: Constants.Notifs.Success.subtitle, style: .success)
-            banner.show()
-            
+            saveTransaction(
+                money: moneyTextField.text ?? "",
+                currency: currencySegment.selectedSegmentIndex == 0 ? "€" : "₼",
+                inOut: inOutSegment.selectedSegmentIndex == 0 ? "In" : "Out",
+                reason: reasonButton.titleLabel?.text ?? "",
+                spendType: spendTypeSegment.selectedSegmentIndex == 0 ? "With card" : "Cash")
         } else {
-            let banner = NotificationBanner(title: Constants.Notifs.Warning.title, subtitle: Constants.Notifs.Warning.subtitle, style: .danger)
-            banner.show()
+            showErrorBanner()
         }
     }
     
@@ -125,11 +113,5 @@ class AddVC: UIViewController {
         } else {
             return true
         }
-    }
-    
-    private func getTransactionData() -> [String : Any]? {
-        
-        let data = Locksmith.loadDataForUserAccount(userAccount: Constants.Properties.moneyTransactionKey)
-        return data
     }
 }

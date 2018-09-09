@@ -30,6 +30,6 @@ class SettingTableViewCell: UITableViewCell {
     }
     
     private func setup() {
-        settingImage.tintColor = Constants.Colors.magentaColor
+        settingImage.tintColor = Constants.Colors.magenta
     }
 }
