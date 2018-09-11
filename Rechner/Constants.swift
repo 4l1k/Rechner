@@ -57,6 +57,10 @@ class Constants {
             [Setting(imageName: "addReason", title: "Add transaction reason"),
              Setting(imageName: "editReason", title: "Edit transaction reasons"),
              Setting(imageName: "garbage", title: "Delete reason settings")]
+        
+        static let aimArray =
+            [Setting(imageName: "aim", title: "Add aim"),
+             Setting(imageName: "aim", title: "Edit aim")]
     }
     
     struct Style {
@@ -67,6 +71,7 @@ class Constants {
         static let ATRVC = "ATRVC"
         static let ETRVC = "ETRVC"
         static let SRVC = "SRVC"
+        static let AAVC = "AAVC"
     }
     
     struct NotificationKeys {

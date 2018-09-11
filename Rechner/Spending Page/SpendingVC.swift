@@ -24,20 +24,21 @@ class SpendingVC: GeneralViewController {
 extension SpendingVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let data = getTransactionData()
-        return data != nil ? (data?.count)! + 1 : 1
+        return data != nil ? (data?.count)! + 1 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = getTransactionData() ?? ["" : ""]
+        let data = getTransactionData()
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! SpendingTableViewCell
         cell.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        if indexPath.row == data.count {
+        
+        if indexPath.row == data?.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2") as! SummaryTableViewCell
-            cell.cellItem = data
+            cell.cellItem = data!
             cell.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
             return cell
         } else {
-            cell.cellItem = data[String(indexPath.row)] as! [String : Any]
+            cell.cellItem = data?[String(indexPath.row)] as! [String : Any]
             return cell
         }
     }

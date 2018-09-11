@@ -12,6 +12,7 @@ target 'Rechner' do
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'NotificationBannerSwift'
   pod 'Charts'
+  pod 'IQKeyboardManager'
   
   target 'RechnerTests' do
     inherit! :search_paths

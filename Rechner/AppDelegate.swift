@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DropDown.startListeningToKeyboard()
         
         UIImageView.appearance(whenContainedInInstancesOf: [UITableView.self]).tintColor = Constants.Colors.magenta
+        IQKeyboardManager.shared().isEnabled = true
         return true
     }
 
